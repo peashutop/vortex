@@ -1,0 +1,22 @@
+%h1 People
+%p= link_to t('new_person'), new_person_path
+
+%table
+  %thead
+    %tr
+      %th= Person.human_attribute_name :name_first
+      %th= Person.human_attribute_name :name_last
+      %th= Person.human_attribute_name :name_prefix
+      %th= Person.human_attribute_name :name_suffix
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for person in @people
+      %tr{ :class => cycle(:odd, :even) }
+        %td= person.name_first
+        %td= person.name_last
+        %td= person.name_prefix
+        %td= person.name_suffix
+        %td.action= link_to t('show'), person
+        %td.action= link_to t('edit'), edit_person_path(person)
+        %td.action= link_to t('destroy'), person, :confirm => t('are_you_sure'), :method => :delete

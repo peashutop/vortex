@@ -38,5 +38,11 @@ module Vortex
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    #http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
+    config.generators do |g|
+      g.template_engine :haml
+    end
+
   end
 end

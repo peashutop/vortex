@@ -1,0 +1,21 @@
+%head
+  %title Vortex 0.0.0.1
+  
+  %link{:rel=>"stylesheet", :type=>"text/css", :href=>"http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css"}
+  %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-lightness/jquery-ui.css",
+        :media => "screen", :rel=>"stylesheet", :type=>"text/css"}
+  /= stylesheet_link_tag 'FilamentGroup_selectToUISlider/css/ui.slider.extras', 'wbc', 'items', 'admin', 'shadows', 'development-footer', 'dt162/media/css/demo_page', 'dt162/media/css/demo_table', :cache => false
+
+  /[if IE 7]
+    = stylesheet_link_tag 'ie7.css', :media => 'screen, projection' 
+
+  %script{ :src => "http://www.google.com/jsapi" }
+  %script google.load("jquery", "1.4.1");
+  %script google.load("jqueryui", "1.8.4");
+  %script google.load("swfobject", "2.2");
+
+  /dt162/media/js/jquery
+  /= javascript_include_tag 'jquery.cycle.all.min', 'jquery.corner', 'dt162/media/js/jquery.dataTables.min', |                                                                                                                                                                                                   
+  /  'FilamentGroup_selectToUISlider/js/jquery.selecttouislider-2.0.js', 'ba-debug.min', 'rails', 'application', :cache => false
+  
+  = yield :head

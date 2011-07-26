@@ -1,0 +1,17 @@
+!!! XML
+!!!
+
+%html 
+  
+  = render :partial => "layouts/header"
+  
+  %body{:class => "#{@body_classes.join(' ')}"} 
+      
+    #header
+      = yield :header
+    #content
+      .flash-notice=flash[:notice]
+      .flash-error=flash[:alert] 
+      = yield
+    #footer
+      = render :partial => "layouts/footer"
